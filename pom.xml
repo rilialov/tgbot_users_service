@@ -13,4 +13,28 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.3.4</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>8.5.7</version>
+                <configuration>
+                    <user>tgbotadmin</user>
+                    <password>password</password>
+                    <url>jdbc:postgresql://localhost:5432/postgres</url>
+                    <schemas><schema>tgbot</schema></schemas>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
