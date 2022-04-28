@@ -7,11 +7,11 @@ CREATE TABLE IF NOT EXISTS tgbot.teams (
 
 DROP TABLE IF EXISTS tgbot.users;
 CREATE TABLE IF NOT EXISTS tgbot.users (
-    chat_id			bigserial NOT NULL PRIMARY KEY,
+    chat_id			varchar(250) NOT NULL PRIMARY KEY,
     nickname 		varchar(100) NOT NULL UNIQUE,
     first_name 		varchar(100) NOT NULL,
     last_name		varchar(100) NOT NULL,
-    team			bigint NOT NULL,
-    "role" 			varchar(100) NOT NULL,
+    team			bigint,
+    "role" 			varchar(100),
     FOREIGN KEY (team) REFERENCES tgbot.teams(id)
 );
