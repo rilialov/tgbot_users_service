@@ -7,23 +7,23 @@ import javax.jws.WebService;
 import java.util.List;
 
 @WebService
-public interface UserService {
+public interface UsersService {
 
     @WebMethod
-    boolean addUser(long chatId, String nickname, String firstName, String lastName);
+    UserDTO addUser(String chatId, String nickname, String firstName, String lastName);
 
     @WebMethod
-    UserDTO getUserById(long chatId);
+    UserDTO getUserById(String chatId);
 
     @WebMethod
-    UserDTO getUser(String nickname);
+    UserDTO getUserByNick(String nickname);
 
     @WebMethod
     List<UserDTO> getAllUsers();
 
     @WebMethod
-    boolean updateUser(UserDTO userDTO);
+    void updateUser(UserDTO userDTO);
 
     @WebMethod
-    boolean deleteUserById(long chatId);
+    void deleteUserById(String chatId);
 }
