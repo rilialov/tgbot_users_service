@@ -7,20 +7,20 @@ import javax.jws.WebService;
 import java.util.List;
 
 @WebService
-public interface TeamService {
+public interface TeamsService {
 
     @WebMethod
-    boolean addTeam(String teamName, String color);
+    TeamDTO addTeam(String teamName, String color);
 
     @WebMethod
-    TeamDTO getTeam(int teamId);
+    TeamDTO getTeam(long teamId);
 
     @WebMethod
     List<TeamDTO> getAllTeams();
 
     @WebMethod
-    boolean updateTeam(TeamDTO teamDTO);
+    void updateTeam(TeamDTO teamDTO);
 
     @WebMethod
-    boolean deleteTeamById(int teamId);
+    void deleteTeamById(long teamId);
 }
