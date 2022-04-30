@@ -1,4 +1,4 @@
-INSERT INTO tgbot.users (chat_id, nickname, first_name, last_name, team, "role")
+INSERT INTO tgbot_users.users (chat_id, nickname, first_name, last_name, team, "role")
 VALUES
     ('fdd1135e8d', 'ultricies', 'Porter', 'Love', 1, 'ADMIN'),
     ('b12aa4fd58', 'magna', 'Desiree', 'Moreno', 1, 'LECTURER'),

@@ -1,4 +1,4 @@
-INSERT INTO tgbot.teams (team_name, color)
+INSERT INTO tgbot_users.teams (team_name, color)
 values
     ('Admin Team', 'Grey'),
     ('White Team', 'White'),
