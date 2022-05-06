@@ -10,10 +10,10 @@ import java.util.List;
 public interface UsersService {
 
     @WebMethod
-    UserDTO addUser(String chatId, String nickname, String firstName, String lastName);
+    UserDTO addUser(long chatId, String firstName);
 
     @WebMethod
-    UserDTO getUserById(String chatId);
+    UserDTO getUserById(long chatId);
 
     @WebMethod
     UserDTO getUserByNick(String nickname);
@@ -25,5 +25,5 @@ public interface UsersService {
     void updateUser(UserDTO userDTO);
 
     @WebMethod
-    void deleteUserById(String chatId);
+    void deleteUserById(long chatId);
 }

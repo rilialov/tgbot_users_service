@@ -9,15 +9,15 @@ public class User {
 
     @Id
     @Column(name = "chat_id", nullable = false)
-    private String chatId;
+    private long chatId;
 
-    @Column(name = "nickname", nullable = false)
+    @Column(name = "nickname")
     private String nickname;
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name")
     private String lastName;
 
     @ManyToOne
@@ -31,14 +31,12 @@ public class User {
     public User() {
     }
 
-    public User(String chatId, String nickname, String firstName, String lastName) {
+    public User(long chatId, String firstName) {
         this.chatId = chatId;
-        this.nickname = nickname;
         this.firstName = firstName;
-        this.lastName = lastName;
     }
 
-    public String getChatId() {
+    public long getChatId() {
         return chatId;
     }
 
@@ -87,7 +85,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return chatId.equals(user.chatId) && nickname.equals(user.nickname) && firstName.equals(user.firstName) && lastName.equals(user.lastName);
+        return chatId == user.chatId && Objects.equals(nickname, user.nickname) && firstName.equals(user.firstName) && Objects.equals(lastName, user.lastName);
     }
 
     @Override

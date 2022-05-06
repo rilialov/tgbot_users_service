@@ -15,17 +15,8 @@ import java.util.List;
 public class UsersDAOImpl implements UsersDAO<User> {
 
     @Override
-    public User getByChatId(String chatId) {
-        CriteriaBuilder cb = HibernateSessionFactoryUtil.getSessionFactory().openSession().getCriteriaBuilder();
-        CriteriaQuery<User> cq = cb.createQuery(User.class);
-        Root<User> user = cq.from(User.class);
-        cq.select(user).where(user.get("chatId").in(chatId));
-        TypedQuery<User> tq = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(cq);
-        try {
-            return tq.getSingleResult();
-        } catch (NoResultException ex) {
-            return null;
-        }
+    public User getByChatId(long chatId) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, chatId);
     }
 
     @Override

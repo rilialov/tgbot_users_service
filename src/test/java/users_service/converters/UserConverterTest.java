@@ -21,50 +21,41 @@ class UserConverterTest {
 
     @Test
     void userToUserDTO() {
-        User user = new User("1af44f5e93", "test_nick", "First", "Last");
+        User user = new User(20, "First Name");
 
         UserDTO userDTO = userConverter.userToUserDTO(user);
 
-        assertEquals("test_nick", userDTO.getNickname());
-        assertEquals("First", userDTO.getFirstName());
-        assertEquals("Last", userDTO.getLastName());
+        assertEquals("First Name", userDTO.getFirstName());
     }
 
     @Test
     void userDTOToUser() {
-        UserDTO userDTO = new UserDTO("1af44f5e93", "test_nick", "First", "Last");
+        UserDTO userDTO = new UserDTO(20, "First Name");
 
         User user = userConverter.userDTOToUser(userDTO);
 
-        assertEquals("test_nick", user.getNickname());
-        assertEquals("First", user.getFirstName());
-        assertEquals("Last", user.getLastName());
-
+        assertEquals("First Name", user.getFirstName());
     }
 
     @Test
     void userListToDTOUserList() {
         List<User> list = new ArrayList<>();
-        User user = new User("1af44f5e93", "test_nick", "First", "Last");
+        User user = new User(20, "First Name");
         list.add(user);
 
         List<UserDTO> dtoList = userConverter.userListToDTOUserList(list);
 
-        assertEquals("test_nick", dtoList.get(0).getNickname());
-        assertEquals("First", dtoList.get(0).getFirstName());
-        assertEquals("Last", dtoList.get(0).getLastName());
+        assertEquals("First Name", dtoList.get(0).getFirstName());
     }
 
     @Test
     void userListDTOToUserList() {
         List<UserDTO> dtoList = new ArrayList<>();
-        UserDTO user = new UserDTO("1af44f5e93", "test_nick", "First", "Last");
+        UserDTO user = new UserDTO(20, "First Name");
         dtoList.add(user);
 
         List<User> list = userConverter.userListDTOToUserList(dtoList);
 
-        assertEquals("test_nick", list.get(0).getNickname());
-        assertEquals("First", list.get(0).getFirstName());
-        assertEquals("Last", list.get(0).getLastName());
+        assertEquals("First Name", list.get(0).getFirstName());
     }
 }

@@ -19,7 +19,7 @@ class UsersDAOImplTest {
 
     @Test
     void getByChatId() {
-        User user = usersDAO.getByChatId("fdd1135e8d");
+        User user = usersDAO.getByChatId(1L);
 
         Assertions.assertNotNull(user);
     }
@@ -41,8 +41,7 @@ class UsersDAOImplTest {
 
     @Test
     void create() {
-        User user = new User("1af44f5e93", "Nickname", "Name",
-                "Last Name");
+        User user = new User(20, "First Name");
         user.setRole(Role.STUDENT);
         User created = usersDAO.create(user);
 
@@ -52,8 +51,7 @@ class UsersDAOImplTest {
 
     @Test
     void update() {
-        User user = new User("1af44f5e93", "Nickname", "Name",
-                "Last Name");
+        User user = new User(20, "First Name");
         user.setRole(Role.STUDENT);
         User created = usersDAO.create(user);
 
@@ -72,8 +70,7 @@ class UsersDAOImplTest {
 
     @Test
     void delete() {
-        User user = new User("1af44f5e93", "Nickname", "Name",
-                "Last Name");
+        User user = new User(20, "First Name");
         user.setRole(Role.STUDENT);
         User created = usersDAO.create(user);
 

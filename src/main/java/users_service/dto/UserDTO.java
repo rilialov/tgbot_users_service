@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class UserDTO {
 
     @XmlElement
-    private String chatId;
+    private long chatId;
 
     @XmlElement
     private String nickname;
@@ -32,14 +32,12 @@ public class UserDTO {
     public UserDTO() {
     }
 
-    public UserDTO(String chatId, String nickname, String firstName, String lastName) {
+    public UserDTO(long chatId, String firstName) {
         this.chatId = chatId;
-        this.nickname = nickname;
         this.firstName = firstName;
-        this.lastName = lastName;
     }
 
-    public String getChatId() {
+    public long getChatId() {
         return chatId;
     }
 

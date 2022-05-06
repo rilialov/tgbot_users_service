@@ -15,13 +15,13 @@ public class UsersServiceImpl implements UsersService {
     private final UserConverter userConverter = new UserConverter();
 
     @Override
-    public UserDTO addUser(String chatId, String nickname, String firstName, String lastName) {
-        User user = usersDAO.create(new User(chatId, nickname, firstName, lastName));
+    public UserDTO addUser(long chatId, String firstName) {
+        User user = usersDAO.create(new User(chatId, firstName));
         return userConverter.userToUserDTO(user);
     }
 
     @Override
-    public UserDTO getUserById(String chatId) {
+    public UserDTO getUserById(long chatId) {
         User user = usersDAO.getByChatId(chatId);
         return userConverter.userToUserDTO(user);
     }
@@ -45,7 +45,7 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public void deleteUserById(String chatId) {
+    public void deleteUserById(long chatId) {
         User user = usersDAO.getByChatId(chatId);
         usersDAO.delete(user);
     }
