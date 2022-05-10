@@ -23,7 +23,9 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public UserDTO getUserById(long chatId) {
         User user = usersDAO.getByChatId(chatId);
-        return userConverter.userToUserDTO(user);
+        if (user == null) {
+            return new UserDTO();
+        } else return userConverter.userToUserDTO(user);
     }
 
     @Override

@@ -25,7 +25,7 @@ public class User {
     private Team team;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role", nullable = false)
+    @Column(name = "role")
     private Role role;
 
     public User() {
@@ -38,6 +38,10 @@ public class User {
 
     public long getChatId() {
         return chatId;
+    }
+
+    public void setChatId(long chatId) {
+        this.chatId = chatId;
     }
 
     public String getNickname() {

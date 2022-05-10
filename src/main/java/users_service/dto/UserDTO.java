@@ -41,6 +41,10 @@ public class UserDTO {
         return chatId;
     }
 
+    public void setChatId(long chatId) {
+        this.chatId = chatId;
+    }
+
     public String getNickname() {
         return nickname;
     }

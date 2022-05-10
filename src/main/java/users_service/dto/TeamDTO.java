@@ -30,6 +30,10 @@ public class TeamDTO {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }

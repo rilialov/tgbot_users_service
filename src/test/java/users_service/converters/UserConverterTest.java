@@ -25,6 +25,7 @@ class UserConverterTest {
 
         UserDTO userDTO = userConverter.userToUserDTO(user);
 
+        assertEquals(20, userDTO.getChatId());
         assertEquals("First Name", userDTO.getFirstName());
     }
 
@@ -34,6 +35,7 @@ class UserConverterTest {
 
         User user = userConverter.userDTOToUser(userDTO);
 
+        assertEquals(20, user.getChatId());
         assertEquals("First Name", user.getFirstName());
     }
 

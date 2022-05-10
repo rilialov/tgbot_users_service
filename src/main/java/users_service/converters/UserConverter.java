@@ -14,19 +14,21 @@ public class UserConverter {
         modelMapper = new ModelMapper();
     }
 
-    public UserDTO userToUserDTO (User user) {
+    public UserDTO userToUserDTO(User user) {
         return modelMapper.map(user, UserDTO.class);
     }
 
-    public User userDTOToUser (UserDTO userDTO) {
+    public User userDTOToUser(UserDTO userDTO) {
         return modelMapper.map(userDTO, User.class);
     }
 
     public List<UserDTO> userListToDTOUserList(List<User> userList) {
-        return modelMapper.map(userList, new TypeToken<List<UserDTO>>() {}.getType());
+        return modelMapper.map(userList, new TypeToken<List<UserDTO>>() {
+        }.getType());
     }
 
     public List<User> userListDTOToUserList(List<UserDTO> userDTOList) {
-        return modelMapper.map(userDTOList, new TypeToken<List<User>>() {}.getType());
+        return modelMapper.map(userDTOList, new TypeToken<List<User>>() {
+        }.getType());
     }
 }
