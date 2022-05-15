@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+    <endpoint
+            name="UsersService"
+            implementation="users_service.services.UsersServiceImpl"
+            url-pattern="/svc_users"/>
+    <endpoint
+            name="TeamsService"
+            implementation="users_service.services.TeamsServiceImpl"
+            url-pattern="/svc_teams"/>
+</endpoints>
